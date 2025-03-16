@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/blog/2025/03/15/001-first-blog/</url>
+    <url>/blog/2025/03/14/001-first-blog/</url>
     <content><![CDATA[<h2 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h2><p>Hello World</p>
 <p><img src="/blog/media/assets/hello-welcome-letters-4984e9-640.jpg"></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(&quot;My blog&quot;)</span><br><span class="line">print(&quot;  more share, more fine.&quot;)</span><br></pre></td></tr></table></figure>]]></content>
