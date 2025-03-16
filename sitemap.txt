@@ -1,7 +1,10 @@
-https://hudsonlee-mtc.github.io/blog/2025/03/15/2025-03-16-first-blog/
+https://hudsonlee-mtc.github.io/blog/2025/03/15/002-math-summary/
+https://hudsonlee-mtc.github.io/blog/2025/03/15/001-first-blog/
 https://hudsonlee-mtc.github.io/blog/tags/index.html
 https://hudsonlee-mtc.github.io/blog/categories/index.html
 https://hudsonlee-mtc.github.io/blog
 https://hudsonlee-mtc.github.io/blog/tags/Miscs/
+https://hudsonlee-mtc.github.io/blog/tags/Math/
 https://hudsonlee-mtc.github.io/blog/categories/notes/
+https://hudsonlee-mtc.github.io/blog/categories/AI/
 
