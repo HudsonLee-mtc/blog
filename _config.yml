@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: BlogTemplate
-subtitle: 'BlogTemplate Subtitle'
-description: 'BlogTemplate Description'
+title: Blog Hudson
+subtitle: 'learnings and sharings'
+description: 'learnings and sharings'
 keywords:
-author: BlogTemplate Authors
+author: Hudson
 # Lang, https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes, zh-cn for Simplified Chinese
 language: en
 timezone: 'Asia/Shanghai'
 
-# URL
+# URL 
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://hailiang-wang.github.io/blogtemplate/
+url: https://hudsonlee-mtc.github.io/blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
