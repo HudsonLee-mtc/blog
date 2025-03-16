@@ -1,11 +1,7 @@
-https://hudsonlee-mtc.github.io/blog/2021/05/11/hello/
-https://hudsonlee-mtc.github.io/blog/2021/05/11/foobar/
-https://hudsonlee-mtc.github.io/blog/2022/05/11/foo2_foo1/
+https://hudsonlee-mtc.github.io/blog/2025/03/15/2025-03-16-first-blog/
 https://hudsonlee-mtc.github.io/blog/tags/index.html
 https://hudsonlee-mtc.github.io/blog/categories/index.html
 https://hudsonlee-mtc.github.io/blog
-https://hudsonlee-mtc.github.io/blog/tags/Open/
-https://hudsonlee-mtc.github.io/blog/tags/Diary/
-https://hudsonlee-mtc.github.io/blog/tags/Tech/
+https://hudsonlee-mtc.github.io/blog/tags/Miscs/
 https://hudsonlee-mtc.github.io/blog/categories/notes/
 

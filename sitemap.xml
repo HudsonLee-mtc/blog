@@ -2,25 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hudsonlee-mtc.github.io/blog/2021/05/11/hello/</loc>
-    
-    <lastmod>2025-03-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hudsonlee-mtc.github.io/blog/2021/05/11/foobar/</loc>
-    
-    <lastmod>2025-03-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hudsonlee-mtc.github.io/blog/2022/05/11/foo2_foo1/</loc>
+    <loc>https://hudsonlee-mtc.github.io/blog/2025/03/15/2025-03-16-first-blog/</loc>
     
     <lastmod>2025-03-16</lastmod>
     
@@ -56,21 +38,7 @@
 
   
   <url>
-    <loc>https://hudsonlee-mtc.github.io/blog/tags/Open/</loc>
-    <lastmod>2025-03-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hudsonlee-mtc.github.io/blog/tags/Diary/</loc>
-    <lastmod>2025-03-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hudsonlee-mtc.github.io/blog/tags/Tech/</loc>
+    <loc>https://hudsonlee-mtc.github.io/blog/tags/Miscs/</loc>
     <lastmod>2025-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
