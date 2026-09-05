@@ -1,5 +1,18 @@
-<view class="page">
+<view class="page home-page">
+  <view class="atmosphere" aria-hidden="true">
+    <image
+      class="atmosphere-img"
+      src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1400&q=80"
+      mode="aspectFill"
+    />
+    <view class="atmosphere-wash"></view>
+    <view class="orb orb-a"></view>
+    <view class="orb orb-b"></view>
+    <view class="orb orb-c"></view>
+  </view>
+
   <view class="hero">
+    <view class="brand-mark">FLOWER ISLAND</view>
     <view class="brand">{{shop.name}}</view>
     <view class="slogan">{{shop.slogan}}</view>
     <view class="notice">{{shop.notice}}</view>

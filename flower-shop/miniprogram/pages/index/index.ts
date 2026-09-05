@@ -2,7 +2,7 @@ import { api, HomeData, Product } from '../../services/api';
 
 Page({
   data: {
-    shop: { name: '花事', slogan: '', notice: '' },
+    shop: { name: '花屿叶', slogan: '', notice: '' },
     banners: [] as HomeData['banners'],
     scenes: [] as HomeData['scenes'],
     featured: [] as Product[],

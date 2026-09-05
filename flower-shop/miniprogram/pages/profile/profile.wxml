@@ -1,7 +1,7 @@
 <view class="page profile-page">
   <view class="hero">
-    <view class="brand">花事</view>
-    <view class="slogan">把刚好的花，送到刚好的人</view>
+    <view class="brand">花屿叶</view>
+    <view class="slogan">一屿花开，一叶知心</view>
   </view>
 
   <view class="menu">

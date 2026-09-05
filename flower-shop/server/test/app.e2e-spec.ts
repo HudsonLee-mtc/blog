@@ -37,7 +37,7 @@ describe('Flower shop API (e2e)', () => {
       .get('/api/home')
       .expect(200)
       .expect((res) => {
-        expect(res.body.shop.name).toBe('花事');
+        expect(res.body.shop.name).toBe('花屿叶');
         expect(Array.isArray(res.body.featured)).toBe(true);
       });
   });

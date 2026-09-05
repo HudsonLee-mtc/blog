@@ -10,16 +10,16 @@
     "pages/profile/profile"
   ],
   "window": {
-    "navigationBarTitleText": "花事",
-    "navigationBarBackgroundColor": "#F7F3EE",
+    "navigationBarTitleText": "花屿叶",
+    "navigationBarBackgroundColor": "#EAF3EE",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#F7F3EE",
+    "backgroundColor": "#EAF3EE",
     "backgroundTextStyle": "dark"
   },
   "tabBar": {
-    "color": "#7A746C",
-    "selectedColor": "#1F4D3A",
-    "backgroundColor": "#FFFCF8",
+    "color": "#6B746E",
+    "selectedColor": "#2A5C45",
+    "backgroundColor": "#F7FBF8",
     "borderStyle": "white",
     "list": [
       {

@@ -21,8 +21,8 @@ export class CatalogService {
 
     return {
       shop: {
-        name: '花事',
-        slogan: '把刚好的花，送到刚好的人',
+        name: '花屿叶',
+        slogan: '一屿花开，一叶知心',
         notice: '同城当日达 · 支持贺卡留言 · 指定时段配送',
       },
       banners,
