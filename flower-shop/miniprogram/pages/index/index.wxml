@@ -1,0 +1,64 @@
+<view class="page">
+  <view class="hero">
+    <view class="brand">{{shop.name}}</view>
+    <view class="slogan">{{shop.slogan}}</view>
+    <view class="notice">{{shop.notice}}</view>
+  </view>
+
+  <swiper class="banner" circular autoplay interval="4200" duration="500">
+    <swiper-item wx:for="{{banners}}" wx:key="id" bindtap="goProduct" data-id="{{item.productId}}">
+      <image class="banner-img" src="{{item.image}}" mode="aspectFill" />
+      <view class="banner-mask">
+        <view class="banner-title">{{item.title}}</view>
+        <view class="banner-sub">{{item.subtitle}}</view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <view class="section-title">按场景选花</view>
+  <scroll-view scroll-x class="scene-row" enable-flex>
+    <view
+      class="scene-chip"
+      wx:for="{{scenes}}"
+      wx:key="id"
+      data-scene="{{item.id}}"
+      bindtap="goScene"
+    >{{item.name}}</view>
+  </scroll-view>
+
+  <view class="section-title">店长推荐</view>
+  <view class="card-grid">
+    <view
+      class="product-card"
+      wx:for="{{featured}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goProduct"
+    >
+      <image class="cover" src="{{item.cover}}" mode="aspectFill" />
+      <view class="body">
+        <view class="name">{{item.name}}</view>
+        <view class="sub">{{item.subtitle}}</view>
+        <view class="price"><text class="yen">¥</text>{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-title">热销花束</view>
+  <view class="card-grid">
+    <view
+      class="product-card"
+      wx:for="{{hot}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goProduct"
+    >
+      <image class="cover" src="{{item.cover}}" mode="aspectFill" />
+      <view class="body">
+        <view class="name">{{item.name}}</view>
+        <view class="sub">已售 {{item.sales}}</view>
+        <view class="price"><text class="yen">¥</text>{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>

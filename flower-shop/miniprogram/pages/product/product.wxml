@@ -1,0 +1,53 @@
+<view class="page product-page" wx:if="{{product}}">
+  <swiper class="gallery" circular>
+    <swiper-item wx:for="{{product.images}}" wx:key="*this">
+      <image class="gallery-img" src="{{item}}" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+
+  <view class="panel">
+    <view class="name">{{product.name}}</view>
+    <view class="sub">{{product.subtitle}}</view>
+    <view class="price-row">
+      <view class="price"><text class="yen">¥</text>{{selectedSpec.price}}</view>
+      <view class="origin" wx:if="{{product.originalPrice}}">¥{{product.originalPrice}}</view>
+    </view>
+    <view class="tags">
+      <text class="tag" wx:for="{{product.sceneLabels}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="label">规格</view>
+    <view class="spec-row">
+      <view
+        class="spec {{selectedSpecId === item.id ? 'on' : ''}}"
+        wx:for="{{product.specs}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="pickSpec"
+      >{{item.name}}</view>
+    </view>
+    <view class="label">数量</view>
+    <view class="qty-row">
+      <view class="qty-btn" bindtap="dec">−</view>
+      <text class="qty">{{quantity}}</text>
+      <view class="qty-btn" bindtap="inc">+</view>
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="label">花材</view>
+    <view class="muted line">{{materialsText}}</view>
+    <view class="label">花语</view>
+    <view class="muted line">{{product.meaning}}</view>
+    <view class="label">养护</view>
+    <view class="muted line">{{product.careTips}}</view>
+  </view>
+
+  <view class="bottom-bar">
+    <button class="btn-ghost" bindtap="addCart">加入购物车</button>
+    <button class="btn-primary" bindtap="buyNow">立即购买</button>
+  </view>
+</view>
+

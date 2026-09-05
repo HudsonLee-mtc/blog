@@ -1,0 +1,27 @@
+<view class="page">
+  <view wx:if="{{!orders.length}}" class="empty">暂无订单</view>
+  <view
+    class="order-card"
+    wx:for="{{orders}}"
+    wx:key="id"
+    data-id="{{item.id}}"
+    bindtap="goDetail"
+  >
+    <view class="head">
+      <text>{{item.orderNo}}</text>
+      <text class="status">{{statusText[item.status] || item.status}}</text>
+    </view>
+    <view class="goods" wx:for="{{item.items}}" wx:for-item="g" wx:key="specId">
+      <image src="{{g.cover}}" mode="aspectFill" />
+      <view class="g-meta">
+        <view>{{g.productName}}</view>
+        <view class="muted">{{g.specName}} × {{g.quantity}}</view>
+      </view>
+      <view>¥{{g.price}}</view>
+    </view>
+    <view class="foot">
+      <text class="muted">{{item.deliveryDate}} {{item.deliverySlot}}</text>
+      <text class="total">¥{{item.totalAmount}}</text>
+    </view>
+  </view>
+</view>

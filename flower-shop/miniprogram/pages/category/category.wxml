@@ -1,0 +1,43 @@
+<view class="page category-page">
+  <scroll-view scroll-x class="filter-row" enable-flex>
+    <view
+      class="filter {{!scene && !categoryId ? 'on' : ''}}"
+      bindtap="clearFilter"
+    >全部</view>
+    <view
+      class="filter {{categoryId === item.id ? 'on' : ''}}"
+      wx:for="{{categories}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="pickCategory"
+    >{{item.name}}</view>
+  </scroll-view>
+
+  <scroll-view scroll-x class="filter-row scenes" enable-flex>
+    <view
+      class="filter soft {{scene === item.id ? 'on' : ''}}"
+      wx:for="{{scenes}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="pickScene"
+    >{{item.name}}</view>
+  </scroll-view>
+
+  <view class="card-grid" wx:if="{{products.length}}">
+    <view
+      class="product-card"
+      wx:for="{{products}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goProduct"
+    >
+      <image class="cover" src="{{item.cover}}" mode="aspectFill" />
+      <view class="body">
+        <view class="name">{{item.name}}</view>
+        <view class="sub">{{item.subtitle}}</view>
+        <view class="price"><text class="yen">¥</text>{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:else>暂无匹配花束</view>
+</view>

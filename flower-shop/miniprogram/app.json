@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/product/product",
+    "pages/cart/cart",
+    "pages/order-confirm/order-confirm",
+    "pages/orders/orders",
+    "pages/order-detail/order-detail",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "花事",
+    "navigationBarBackgroundColor": "#F7F3EE",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F3EE",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#7A746C",
+    "selectedColor": "#1F4D3A",
+    "backgroundColor": "#FFFCF8",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tab-home.png",
+        "selectedIconPath": "assets/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "选花",
+        "iconPath": "assets/tab-catalog.png",
+        "selectedIconPath": "assets/tab-catalog-active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "assets/tab-cart.png",
+        "selectedIconPath": "assets/tab-cart-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/tab-me.png",
+        "selectedIconPath": "assets/tab-me-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

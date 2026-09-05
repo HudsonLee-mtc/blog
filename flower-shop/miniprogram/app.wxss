@@ -1,0 +1,145 @@
+page {
+  --bg: #f7f3ee;
+  --surface: #fffcf8;
+  --ink: #1c1916;
+  --muted: #7a746c;
+  --brand: #1f4d3a;
+  --brand-soft: #d8e6de;
+  --accent: #c45c6a;
+  --line: rgba(28, 25, 22, 0.08);
+  --shadow: 0 18rpx 48rpx rgba(31, 77, 58, 0.08);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 28rpx;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+view,
+text,
+image,
+button,
+input,
+textarea,
+swiper,
+scroll-view {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24rpx 28rpx 48rpx;
+  background:
+    radial-gradient(1200rpx 600rpx at 10% -10%, rgba(196, 92, 106, 0.12), transparent 55%),
+    radial-gradient(900rpx 500rpx at 100% 0%, rgba(31, 77, 58, 0.12), transparent 50%),
+    linear-gradient(180deg, #f7f3ee 0%, #efe8df 100%);
+}
+
+.brand {
+  font-size: 56rpx;
+  font-weight: 700;
+  letter-spacing: 4rpx;
+  color: var(--brand);
+}
+
+.slogan {
+  margin-top: 8rpx;
+  color: var(--muted);
+  font-size: 26rpx;
+}
+
+.section-title {
+  margin: 36rpx 0 20rpx;
+  font-size: 34rpx;
+  font-weight: 650;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+}
+
+.product-card {
+  background: var(--surface);
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.product-card .cover {
+  width: 100%;
+  height: 280rpx;
+  display: block;
+}
+
+.product-card .body {
+  padding: 18rpx 18rpx 22rpx;
+}
+
+.product-card .name {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.product-card .sub {
+  margin-top: 6rpx;
+  color: var(--muted);
+  font-size: 22rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price {
+  margin-top: 12rpx;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 30rpx;
+}
+
+.price .yen {
+  font-size: 22rpx;
+  margin-right: 2rpx;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+  border-radius: 999rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  padding: 0 36rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: none;
+}
+
+.btn-primary::after {
+  border: none;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--brand);
+  border: 2rpx solid var(--brand);
+  border-radius: 999rpx;
+  font-size: 26rpx;
+  height: 72rpx;
+  line-height: 68rpx;
+  padding: 0 28rpx;
+}
+
+.btn-ghost::after {
+  border: none;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.empty {
+  padding: 120rpx 40rpx;
+  text-align: center;
+  color: var(--muted);
+}

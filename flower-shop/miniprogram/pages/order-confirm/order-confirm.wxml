@@ -1,0 +1,53 @@
+<view class="page confirm-page">
+  <view class="panel">
+    <view class="panel-title">收花人</view>
+    <input class="field" placeholder="姓名" value="{{receiverName}}" bindinput="onName" />
+    <input class="field" placeholder="手机号" type="number" maxlength="11" value="{{receiverPhone}}" bindinput="onPhone" />
+    <input class="field" placeholder="详细地址" value="{{addressDetail}}" bindinput="onAddress" />
+  </view>
+
+  <view class="panel">
+    <view class="panel-title">配送时间</view>
+    <picker mode="date" value="{{deliveryDate}}" start="{{minDate}}" bindchange="onDate">
+      <view class="picker-row">日期：{{deliveryDate}}</view>
+    </picker>
+    <scroll-view scroll-x class="slot-row" enable-flex>
+      <view
+        class="slot {{deliverySlot === item ? 'on' : ''}}"
+        wx:for="{{deliverySlots}}"
+        wx:key="*this"
+        data-slot="{{item}}"
+        bindtap="pickSlot"
+      >{{item}}</view>
+    </scroll-view>
+  </view>
+
+  <view class="panel">
+    <view class="panel-title">贺卡留言</view>
+    <textarea
+      class="textarea"
+      maxlength="80"
+      placeholder="写一句想说的话（选填）"
+      value="{{cardMessage}}"
+      bindinput="onCard"
+    />
+    <view class="panel-title remark-title">订单备注</view>
+    <input class="field" placeholder="如门口放置、电话联系等" value="{{remark}}" bindinput="onRemark" />
+  </view>
+
+  <view class="panel">
+    <view class="panel-title">商品</view>
+    <view class="line-item" wx:for="{{cart.items}}" wx:key="specId">
+      <image src="{{item.cover}}" mode="aspectFill" />
+      <view class="meta">
+        <view>{{item.productName}}</view>
+        <view class="muted">{{item.specName}} × {{item.quantity}}</view>
+      </view>
+      <view class="amount">¥{{item.amount}}</view>
+    </view>
+    <view class="sum-row"><text>配送费</text><text>¥{{cart.deliveryFee}}</text></view>
+    <view class="sum-row total"><text>应付</text><text class="accent">¥{{cart.totalAmount}}</text></view>
+  </view>
+
+  <button class="btn-primary submit" bindtap="submit" loading="{{submitting}}">提交订单</button>
+</view>
