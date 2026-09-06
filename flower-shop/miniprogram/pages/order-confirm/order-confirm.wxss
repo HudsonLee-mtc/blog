@@ -103,3 +103,57 @@
   margin-top: 12rpx;
   margin-bottom: 40rpx;
 }
+
+.mode-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.mode {
+  flex: 1;
+  text-align: center;
+  padding: 22rpx 0;
+  border-radius: 18rpx;
+  background: #eef5f1;
+  font-weight: 650;
+}
+
+.mode.on {
+  background: var(--brand);
+  color: #fff;
+}
+
+.panel-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.panel-title-row .panel-title {
+  margin-bottom: 0;
+}
+
+.link {
+  color: var(--brand);
+  font-size: 24rpx;
+}
+
+.address-card {
+  padding: 20rpx;
+  border-radius: 16rpx;
+  background: #eef5f1;
+}
+
+.shop-box {
+  margin-bottom: 16rpx;
+  padding: 20rpx;
+  border-radius: 16rpx;
+  background: #eef5f1;
+  line-height: 1.7;
+}
+
+.wallet-tip {
+  margin-top: 12rpx;
+  font-size: 22rpx;
+}

@@ -9,8 +9,7 @@
     <view class="name">{{product.name}}</view>
     <view class="sub">{{product.subtitle}}</view>
     <view class="price-row">
-      <view class="price"><text class="yen">¥</text>{{selectedSpec.price}}</view>
-      <view class="origin" wx:if="{{product.originalPrice}}">¥{{product.originalPrice}}</view>
+      <view class="price"><text class="yen">¥</text>{{displayPrice}}</view>
     </view>
     <view class="tags">
       <text class="tag" wx:for="{{product.sceneLabels}}" wx:key="*this">{{item}}</text>
@@ -18,16 +17,53 @@
   </view>
 
   <view class="panel">
-    <view class="label">规格</view>
-    <view class="spec-row">
+    <view class="label-row">
+      <view class="label">选花规格</view>
+      <view class="link" bindtap="toggleChart">尺寸示意</view>
+    </view>
+    <image
+      wx:if="{{showChart}}"
+      class="size-chart"
+      src="/assets/size-chart.png"
+      mode="widthFix"
+      bindtap="previewChart"
+    />
+    <view class="spec-list">
       <view
-        class="spec {{selectedSpecId === item.id ? 'on' : ''}}"
+        class="spec-card {{selectedSpecId === item.id ? 'on' : ''}}"
         wx:for="{{product.specs}}"
         wx:key="id"
         data-id="{{item.id}}"
         bindtap="pickSpec"
-      >{{item.name}}</view>
+      >
+        <view class="spec-top">
+          <text class="code">{{item.code}}</text>
+          <text class="spec-price">¥{{item.price}}</text>
+        </view>
+        <view class="spec-name">{{item.name}}</view>
+        <view class="spec-hint">{{item.stemHint}}</view>
+      </view>
     </view>
+  </view>
+
+  <view class="panel" wx:if="{{customOptions.length}}">
+    <view class="label">定制选项</view>
+    <view
+      class="option-row {{item.checked ? 'on' : ''}}"
+      wx:for="{{customOptions}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="toggleOption"
+    >
+      <view class="option-main">
+        <view class="option-name">{{item.name}}</view>
+        <view class="option-desc">{{item.desc}}</view>
+      </view>
+      <view class="option-price">+¥{{item.price}}</view>
+    </view>
+  </view>
+
+  <view class="panel">
     <view class="label">数量</view>
     <view class="qty-row">
       <view class="qty-btn" bindtap="dec">−</view>
@@ -50,4 +86,3 @@
     <button class="btn-primary" bindtap="buyNow">立即购买</button>
   </view>
 </view>
-

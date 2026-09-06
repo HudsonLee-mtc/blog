@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Headers, Param, Post } from '@nestjs/common';
-import { CreateOrderDto } from '../common/dto';
+import { CreateOrderDto, PayOrderDto } from '../common/dto';
 import { OrdersService } from './orders.service';
 
 @Controller('orders')
@@ -21,10 +21,13 @@ export class OrdersController {
     return this.ordersService.create(body);
   }
 
-  /** 测试号阶段模拟支付成功 */
   @Post(':id/pay')
-  pay(@Param('id') id: string) {
-    return this.ordersService.pay(id);
+  pay(
+    @Param('id') id: string,
+    @Headers('x-client-id') clientId = 'guest',
+    @Body() body: PayOrderDto,
+  ) {
+    return this.ordersService.pay(id, body, clientId);
   }
 
   @Post(':id/status/:status')

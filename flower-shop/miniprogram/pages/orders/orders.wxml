@@ -20,7 +20,7 @@
       <view>¥{{g.price}}</view>
     </view>
     <view class="foot">
-      <text class="muted">{{item.deliveryDate}} {{item.deliverySlot}}</text>
+      <text class="muted">{{item.fulfillmentType === 'pickup' ? '到店自取' : '外卖配送'}} · {{item.deliveryDate}} {{item.deliverySlot}}</text>
       <text class="total">¥{{item.totalAmount}}</text>
     </view>
   </view>

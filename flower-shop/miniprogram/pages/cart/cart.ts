@@ -8,6 +8,7 @@ Page({
       deliveryFee: 0,
       totalAmount: 0,
       count: 0,
+      fulfillmentType: 'delivery',
     } as CartData,
   },
   onShow() {
@@ -22,16 +23,16 @@ Page({
     }
   },
   async changeQty(e: WechatMiniprogram.TouchEvent) {
-    const { productId, specId, quantity } = e.currentTarget.dataset as {
-      productId: string;
-      specId: string;
-      quantity: number;
-    };
+    const index = Number(e.currentTarget.dataset.index);
+    const delta = Number(e.currentTarget.dataset.delta);
+    const item = this.data.cart.items[index];
+    if (!item) return;
     try {
       const cart = await api.updateCartQty({
-        productId,
-        specId,
-        quantity: Number(quantity),
+        productId: item.productId,
+        specId: item.specId,
+        quantity: item.quantity + delta,
+        optionIds: item.optionIds || [],
       });
       this.setData({ cart });
     } catch (err) {

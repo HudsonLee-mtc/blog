@@ -1,6 +1,14 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { DataStore } from '../common/data.store';
-import { deliverySlots, sceneLabels } from '../common/seed';
+import {
+  customOptions,
+  deliveryFee,
+  deliverySlots,
+  rechargePackages,
+  sceneLabels,
+  shopInfo,
+  sizeSpecs,
+} from '../common/seed';
 import { Product, SceneTag } from '../common/types';
 
 @Injectable()
@@ -20,16 +28,13 @@ export class CatalogService {
       }));
 
     return {
-      shop: {
-        name: '花屿叶',
-        slogan: '一屿花开，一叶知心',
-        notice: '同城当日达 · 支持贺卡留言 · 指定时段配送',
-      },
+      shop: shopInfo,
       banners,
       scenes: Object.entries(sceneLabels).map(([id, name]) => ({ id, name })),
       categories: [...this.store.categories].sort((a, b) => a.sort - b.sort),
       featured: this.store.products.filter((p) => p.featured),
       hot: [...this.store.products].sort((a, b) => b.sales - a.sales).slice(0, 6),
+      sizeSpecs,
     };
   }
 
@@ -63,17 +68,23 @@ export class CatalogService {
     return {
       ...product,
       sceneLabels: product.scenes.map((s) => sceneLabels[s] ?? s),
+      customOptions,
+      sizeChart: '/assets/size-chart.png',
       deliverySlots,
-      deliveryFee: 10,
+      deliveryFee,
     };
   }
 
   getMeta() {
     return {
+      shop: shopInfo,
       categories: this.store.categories,
       scenes: Object.entries(sceneLabels).map(([id, name]) => ({ id, name })),
       deliverySlots,
-      deliveryFee: 10,
+      deliveryFee,
+      sizeSpecs,
+      customOptions,
+      rechargePackages,
     };
   }
 }

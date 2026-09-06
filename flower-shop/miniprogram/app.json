@@ -7,7 +7,10 @@
     "pages/order-confirm/order-confirm",
     "pages/orders/orders",
     "pages/order-detail/order-detail",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/address-list/address-list",
+    "pages/address-edit/address-edit",
+    "pages/wallet/wallet"
   ],
   "window": {
     "navigationBarTitleText": "花屿叶",

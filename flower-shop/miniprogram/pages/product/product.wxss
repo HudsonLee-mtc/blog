@@ -126,3 +126,97 @@
 .bottom-bar button {
   flex: 1;
 }
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14rpx;
+}
+
+.link {
+  color: var(--brand);
+  font-size: 24rpx;
+}
+
+.size-chart {
+  width: 100%;
+  margin-bottom: 20rpx;
+  border-radius: 16rpx;
+}
+
+.spec-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+
+.spec-card {
+  padding: 20rpx;
+  border-radius: 20rpx;
+  background: #f1ebe3;
+}
+
+.spec-card.on {
+  background: var(--brand);
+  color: #fff;
+}
+
+.spec-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.code {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.spec-price {
+  font-size: 26rpx;
+  font-weight: 650;
+}
+
+.spec-name {
+  margin-top: 8rpx;
+  font-size: 26rpx;
+}
+
+.spec-hint {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  opacity: 0.8;
+}
+
+.option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 12rpx;
+  border-radius: 18rpx;
+  background: #f1ebe3;
+}
+
+.option-row.on {
+  background: var(--brand-soft);
+  outline: 2rpx solid var(--brand);
+}
+
+.option-name {
+  font-weight: 650;
+}
+
+.option-desc {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: var(--muted);
+}
+
+.option-price {
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}

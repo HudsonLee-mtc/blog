@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Headers, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Headers, Put, Query } from '@nestjs/common';
 import { UpdateCartItemDto, UpsertCartItemDto } from '../common/dto';
 import { CartService } from './cart.service';
 
@@ -7,8 +7,14 @@ export class CartController {
   constructor(private readonly cartService: CartService) {}
 
   @Get()
-  get(@Headers('x-client-id') clientId = 'guest') {
-    return this.cartService.getCart(clientId);
+  get(
+    @Headers('x-client-id') clientId = 'guest',
+    @Query('fulfillmentType') fulfillmentType?: 'delivery' | 'pickup',
+  ) {
+    return this.cartService.getCart(
+      clientId,
+      fulfillmentType === 'pickup' ? 'pickup' : 'delivery',
+    );
   }
 
   @Put('item')
@@ -21,6 +27,7 @@ export class CartController {
       body.productId,
       body.specId,
       body.quantity,
+      body.optionIds ?? [],
     );
   }
 
@@ -34,6 +41,7 @@ export class CartController {
       body.productId,
       body.specId,
       body.quantity,
+      body.optionIds ?? [],
     );
   }
 

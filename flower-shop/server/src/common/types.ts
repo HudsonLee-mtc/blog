@@ -8,9 +8,18 @@ export type SceneTag =
 
 export interface ProductSpec {
   id: string;
+  code: string;
   name: string;
+  stemHint: string;
   price: number;
   stock: number;
+}
+
+export interface CustomOption {
+  id: string;
+  name: string;
+  desc: string;
+  price: number;
 }
 
 export interface Product {
@@ -43,6 +52,7 @@ export interface CartItem {
   productId: string;
   specId: string;
   quantity: number;
+  optionIds: string[];
 }
 
 export type OrderStatus =
@@ -53,6 +63,8 @@ export type OrderStatus =
   | 'completed'
   | 'cancelled';
 
+export type FulfillmentType = 'delivery' | 'pickup';
+
 export interface OrderItem {
   productId: string;
   productName: string;
@@ -61,6 +73,9 @@ export interface OrderItem {
   specName: string;
   price: number;
   quantity: number;
+  optionIds: string[];
+  optionNames: string[];
+  optionsAmount: number;
 }
 
 export interface AddressSnapshot {
@@ -69,10 +84,19 @@ export interface AddressSnapshot {
   detail: string;
 }
 
+export interface UserAddress {
+  id: string;
+  name: string;
+  phone: string;
+  detail: string;
+  isDefault: boolean;
+}
+
 export interface Order {
   id: string;
   orderNo: string;
   status: OrderStatus;
+  fulfillmentType: FulfillmentType;
   items: OrderItem[];
   address: AddressSnapshot;
   deliveryDate: string;
@@ -80,8 +104,29 @@ export interface Order {
   cardMessage: string;
   remark: string;
   goodsAmount: number;
+  optionsAmount: number;
   deliveryFee: number;
   totalAmount: number;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface ShopInfo {
+  name: string;
+  slogan: string;
+  notice: string;
+  address: string;
+  phone: string;
+  businessHours: string;
+}
+
+export interface WalletAccount {
+  balance: number;
+}
+
+export interface RechargePackage {
+  id: string;
+  amount: number;
+  bonus: number;
+  label: string;
 }

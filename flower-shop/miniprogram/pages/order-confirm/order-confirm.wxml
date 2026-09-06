@@ -1,13 +1,42 @@
 <view class="page confirm-page">
   <view class="panel">
-    <view class="panel-title">收花人</view>
-    <input class="field" placeholder="姓名" value="{{receiverName}}" bindinput="onName" />
+    <view class="panel-title">取货方式</view>
+    <view class="mode-row">
+      <view class="mode {{fulfillmentType === 'delivery' ? 'on' : ''}}" data-type="delivery" bindtap="pickMode">外卖配送</view>
+      <view class="mode {{fulfillmentType === 'pickup' ? 'on' : ''}}" data-type="pickup" bindtap="pickMode">到店自取</view>
+    </view>
+  </view>
+
+  <view class="panel" wx:if="{{fulfillmentType === 'delivery'}}">
+    <view class="panel-title-row">
+      <view class="panel-title">收货地址</view>
+      <view class="link" bindtap="goAddresses">管理地址</view>
+    </view>
+    <view wx:if="{{selectedAddress}}" class="address-card" bindtap="goAddresses">
+      <view>{{selectedAddress.name}} {{selectedAddress.phone}}</view>
+      <view class="muted">{{selectedAddress.detail}}</view>
+    </view>
+    <view wx:else>
+      <input class="field" placeholder="收花人姓名" value="{{receiverName}}" bindinput="onName" />
+      <input class="field" placeholder="手机号" type="number" maxlength="11" value="{{receiverPhone}}" bindinput="onPhone" />
+      <input class="field" placeholder="详细地址" value="{{addressDetail}}" bindinput="onAddress" />
+      <view class="link" bindtap="goAddresses">或从地址簿选择</view>
+    </view>
+  </view>
+
+  <view class="panel" wx:else>
+    <view class="panel-title">到店信息</view>
+    <view class="shop-box">
+      <view>{{shop.name}}</view>
+      <view class="muted">{{shop.address}}</view>
+      <view class="muted">{{shop.phone}} · {{shop.businessHours}}</view>
+    </view>
+    <input class="field" placeholder="取花人姓名" value="{{receiverName}}" bindinput="onName" />
     <input class="field" placeholder="手机号" type="number" maxlength="11" value="{{receiverPhone}}" bindinput="onPhone" />
-    <input class="field" placeholder="详细地址" value="{{addressDetail}}" bindinput="onAddress" />
   </view>
 
   <view class="panel">
-    <view class="panel-title">配送时间</view>
+    <view class="panel-title">{{fulfillmentType === 'delivery' ? '配送时间' : '取花时间'}}</view>
     <picker mode="date" value="{{deliveryDate}}" start="{{minDate}}" bindchange="onDate">
       <view class="picker-row">日期：{{deliveryDate}}</view>
     </picker>
@@ -24,13 +53,7 @@
 
   <view class="panel">
     <view class="panel-title">贺卡留言</view>
-    <textarea
-      class="textarea"
-      maxlength="80"
-      placeholder="写一句想说的话（选填）"
-      value="{{cardMessage}}"
-      bindinput="onCard"
-    />
+    <textarea class="textarea" maxlength="80" placeholder="写一句想说的话（选填）" value="{{cardMessage}}" bindinput="onCard" />
     <view class="panel-title remark-title">订单备注</view>
     <input class="field" placeholder="如门口放置、电话联系等" value="{{remark}}" bindinput="onRemark" />
   </view>
@@ -42,11 +65,13 @@
       <view class="meta">
         <view>{{item.productName}}</view>
         <view class="muted">{{item.specName}} × {{item.quantity}}</view>
+        <view class="muted" wx:if="{{item.optionNames.length}}">定制：{{item.optionNames}}</view>
       </view>
       <view class="amount">¥{{item.amount}}</view>
     </view>
     <view class="sum-row"><text>配送费</text><text>¥{{cart.deliveryFee}}</text></view>
     <view class="sum-row total"><text>应付</text><text class="accent">¥{{cart.totalAmount}}</text></view>
+    <view class="muted wallet-tip">余额 ¥{{walletBalance}}，可在订单详情用余额支付</view>
   </view>
 
   <button class="btn-primary submit" bindtap="submit" loading="{{submitting}}">提交订单</button>
