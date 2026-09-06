@@ -1,26 +1,39 @@
 <view class="home-page">
-  <view class="poster-wrap">
-    <image class="poster" src="/assets/home-hero.png" mode="widthFix" />
+  <view class="poster-clip" style="height: {{clipHeight}}px;">
+    <view class="poster-inner">
+      <image
+        class="poster"
+        src="/assets/home-hero.png"
+        mode="widthFix"
+        bindload="onPosterLoad"
+      />
 
-    <!-- 透明热区：对应图上三个入口 + 盲盒推荐 -->
-    <view
-      class="hotspot hotspot-pickup"
-      data-mode="pickup"
-      data-path="/pages/service/service?mode=pickup"
-      bindtap="onAction"
-    ></view>
-    <view
-      class="hotspot hotspot-custom"
-      data-mode="custom"
-      data-path="/pages/custom/custom"
-      bindtap="onAction"
-    ></view>
-    <view
-      class="hotspot hotspot-delivery"
-      data-mode="delivery"
-      data-path="/pages/service/service?mode=delivery"
-      bindtap="onAction"
-    ></view>
-    <view class="hotspot hotspot-promo" bindtap="goPromo"></view>
+      <view
+        class="hotspot"
+        style="left: 4%; top: {{hotspots.pickup.top}}px; width: 30%; height: {{hotspots.pickup.height}}px;"
+        data-mode="pickup"
+        data-path="/pages/service/service?mode=pickup"
+        bindtap="onAction"
+      ></view>
+      <view
+        class="hotspot"
+        style="left: 35%; top: {{hotspots.custom.top}}px; width: 30%; height: {{hotspots.custom.height}}px;"
+        data-mode="custom"
+        data-path="/pages/custom/custom"
+        bindtap="onAction"
+      ></view>
+      <view
+        class="hotspot"
+        style="left: 66%; top: {{hotspots.delivery.top}}px; width: 30%; height: {{hotspots.delivery.height}}px;"
+        data-mode="delivery"
+        data-path="/pages/service/service?mode=delivery"
+        bindtap="onAction"
+      ></view>
+      <view
+        class="hotspot"
+        style="left: 5%; top: {{hotspots.promo.top}}px; width: 90%; height: {{hotspots.promo.height}}px;"
+        bindtap="goPromo"
+      ></view>
+    </view>
   </view>
 </view>

@@ -1,55 +1,27 @@
 .home-page {
   min-height: 100vh;
   padding: 0;
-  background: #e8f0ea;
+  background: #f4efe6;
 }
 
-.poster-wrap {
+.poster-clip {
   position: relative;
   width: 100%;
   overflow: hidden;
-  /* 裁掉设计稿底部假 tab，避免和真 tabBar 叠两层 */
-  padding-bottom: 0;
+  background: #f4efe6;
+}
+
+.poster-inner {
+  position: relative;
+  width: 100%;
 }
 
 .poster {
   display: block;
   width: 100%;
-  /* 略微上提裁切底部导航条区域 */
-  margin-bottom: -12%;
 }
 
 .hotspot {
   position: absolute;
   z-index: 2;
-}
-
-/* 三个入口大致落在画面中下部 */
-.hotspot-pickup {
-  left: 4%;
-  top: 58%;
-  width: 30%;
-  height: 14%;
-}
-
-.hotspot-custom {
-  left: 35%;
-  top: 58%;
-  width: 30%;
-  height: 14%;
-}
-
-.hotspot-delivery {
-  left: 66%;
-  top: 58%;
-  width: 30%;
-  height: 14%;
-}
-
-/* 店长推荐 / 盲盒横幅 */
-.hotspot-promo {
-  left: 5%;
-  top: 73%;
-  width: 90%;
-  height: 12%;
 }
