@@ -153,6 +153,10 @@
   line-height: 1.7;
 }
 
+.map-tip {
+  margin-top: 10rpx;
+}
+
 .wallet-tip {
   margin-top: 12rpx;
   font-size: 22rpx;

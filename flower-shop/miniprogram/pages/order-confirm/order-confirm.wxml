@@ -25,11 +25,15 @@
   </view>
 
   <view class="panel" wx:else>
-    <view class="panel-title">到店信息</view>
-    <view class="shop-box">
-      <view>{{shop.name}}</view>
+    <view class="panel-title-row">
+      <view class="panel-title">到店信息</view>
+      <view class="link" bindtap="openMap">打开导航</view>
+    </view>
+    <view class="shop-box" bindtap="openMap">
+      <view>{{shop.mapName || shop.name}}</view>
       <view class="muted">{{shop.address}}</view>
       <view class="muted">{{shop.phone}} · {{shop.businessHours}}</view>
+      <view class="link map-tip">点击打开地图导航</view>
     </view>
     <input class="field" placeholder="取花人姓名" value="{{receiverName}}" bindinput="onName" />
     <input class="field" placeholder="手机号" type="number" maxlength="11" value="{{receiverPhone}}" bindinput="onPhone" />

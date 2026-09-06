@@ -86,10 +86,24 @@
   margin-bottom: 6rpx;
 }
 
-.shop-phone {
-  margin-top: 14rpx;
+.shop-address {
+  margin-top: 6rpx;
+  line-height: 1.7;
+}
+
+.shop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx 28rpx;
+  margin-top: 18rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid var(--line);
+}
+
+.shop-action {
   color: var(--brand);
   font-weight: 600;
+  font-size: 26rpx;
 }
 
 .tips {

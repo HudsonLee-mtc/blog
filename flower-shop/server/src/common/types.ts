@@ -118,6 +118,10 @@ export interface ShopInfo {
   address: string;
   phone: string;
   businessHours: string;
+  /** 地图导航用（微信 wx.openLocation） */
+  latitude: number;
+  longitude: number;
+  mapName: string;
 }
 
 export interface WalletAccount {

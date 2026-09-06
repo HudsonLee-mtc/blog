@@ -10,6 +10,9 @@ Page({
       address: '',
       phone: '',
       businessHours: '',
+      latitude: 0,
+      longitude: 0,
+      mapName: '',
     } as ShopInfo,
   },
   onShow() {
@@ -40,6 +43,28 @@ Page({
   },
   goWallet() {
     wx.navigateTo({ url: '/pages/wallet/wallet' });
+  },
+  openMap() {
+    const { shop } = this.data;
+    if (!shop.latitude || !shop.longitude) {
+      wx.showToast({ title: '暂无坐标信息', icon: 'none' });
+      return;
+    }
+    wx.openLocation({
+      latitude: shop.latitude,
+      longitude: shop.longitude,
+      name: shop.mapName || shop.name,
+      address: shop.address,
+      scale: 16,
+    });
+  },
+  copyAddress() {
+    const address = this.data.shop.address;
+    if (!address) return;
+    wx.setClipboardData({
+      data: address,
+      success: () => wx.showToast({ title: '地址已复制', icon: 'success' }),
+    });
   },
   callShop() {
     const phone = this.data.shop.phone;

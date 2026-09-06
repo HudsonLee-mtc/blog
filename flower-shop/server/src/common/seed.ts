@@ -74,9 +74,14 @@ export const shopInfo: ShopInfo = {
   name: '花屿叶',
   slogan: '一屿花开，一叶知心',
   notice: '同城当日达 · 支持贺卡留言 · 外送/到店取',
-  address: '上海市徐汇区花屿路 18 号（近地铁站）',
+  address:
+    '内蒙古自治区阿拉善盟阿拉善左旗巴彦浩特镇民主路东城国际17-1芳颜美阁',
   phone: '021-88886666',
   businessHours: '每天 09:30 - 21:00',
+  // 巴彦浩特东城国际附近坐标（可后续用微信选点微调）
+  latitude: 38.8486,
+  longitude: 105.7185,
+  mapName: '花屿叶 · 芳颜美阁',
 };
 
 export const rechargePackages: RechargePackage[] = [

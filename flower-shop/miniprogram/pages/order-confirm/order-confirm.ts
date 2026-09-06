@@ -25,6 +25,9 @@ Page({
       address: '',
       phone: '',
       businessHours: '',
+      latitude: 0,
+      longitude: 0,
+      mapName: '',
     } as ShopInfo,
     addresses: [] as UserAddress[],
     selectedAddress: null as UserAddress | null,
@@ -83,6 +86,20 @@ Page({
   },
   goAddresses() {
     wx.navigateTo({ url: '/pages/address-list/address-list?from=confirm' });
+  },
+  openMap() {
+    const { shop } = this.data;
+    if (!shop.latitude || !shop.longitude) {
+      wx.showToast({ title: '暂无坐标信息', icon: 'none' });
+      return;
+    }
+    wx.openLocation({
+      latitude: shop.latitude,
+      longitude: shop.longitude,
+      name: shop.mapName || shop.name,
+      address: shop.address,
+      scale: 16,
+    });
   },
   onName(e: WechatMiniprogram.Input) {
     this.setData({ receiverName: e.detail.value });

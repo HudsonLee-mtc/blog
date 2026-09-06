@@ -22,10 +22,14 @@
 
   <view class="shop-card">
     <view class="shop-title">店铺地址</view>
-    <view class="shop-name">{{shop.name}}</view>
-    <view class="muted">{{shop.address}}</view>
+    <view class="shop-name">{{shop.mapName || shop.name}}</view>
+    <view class="muted shop-address">{{shop.address}}</view>
     <view class="muted">{{shop.businessHours}}</view>
-    <view class="shop-phone" bindtap="callShop">电话 {{shop.phone}}</view>
+    <view class="shop-actions">
+      <view class="shop-action" bindtap="openMap">导航 / 地图</view>
+      <view class="shop-action" bindtap="copyAddress">复制地址</view>
+      <view class="shop-action" bindtap="callShop">电话 {{shop.phone}}</view>
+    </view>
   </view>
 
   <view class="tips muted">

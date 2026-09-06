@@ -46,6 +46,9 @@ export interface ShopInfo {
   address: string;
   phone: string;
   businessHours: string;
+  latitude: number;
+  longitude: number;
+  mapName: string;
 }
 
 export interface HomeData {
