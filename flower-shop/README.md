@@ -24,7 +24,7 @@ npm run start:dev
 
 1. 打开微信开发者工具
 2. 导入项目，目录选 `flower-shop/miniprogram`
-3. AppID 填你的**测试号**
+3. AppID 已配置为 `wx586bc215c87df2c2`（可在开发者工具中确认）
 4. 详情 → 本地设置 → 勾选 **不校验合法域名**（本地 HTTP 调试必须）
 5. 若用真机预览：把 `miniprogram/utils/config.ts` 里的 `API_BASE` 改成电脑局域网 IP，例如：
    `http://192.168.1.8:3000/api`
