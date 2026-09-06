@@ -27,6 +27,9 @@ export class CatalogService {
         productId: p.id,
       }));
 
+    const blindBox =
+      this.store.products.find((p) => p.id === 'p-blindbox') ?? null;
+
     return {
       shop: shopInfo,
       banners,
@@ -35,6 +38,37 @@ export class CatalogService {
       featured: this.store.products.filter((p) => p.featured),
       hot: [...this.store.products].sort((a, b) => b.sales - a.sales).slice(0, 6),
       sizeSpecs,
+      actions: [
+        {
+          id: 'pickup',
+          title: '到店自取',
+          subtitle: 'PICKUP',
+          mode: 'pickup',
+          path: '/pages/service/service?mode=pickup',
+        },
+        {
+          id: 'custom',
+          title: '鲜花定制',
+          subtitle: 'FLOWER DESIGN',
+          mode: 'custom',
+          path: '/pages/custom/custom',
+        },
+        {
+          id: 'delivery',
+          title: '外送到家',
+          subtitle: 'TAKEOUT',
+          mode: 'delivery',
+          path: '/pages/service/service?mode=delivery',
+        },
+      ],
+      promo: {
+        title: '店长推荐：鲜花盲盒',
+        subtitle: 'SHARED PICK · 拆开才知道的小确幸',
+        cta: '立即选购',
+        productId: blindBox?.id ?? 'p-blindbox',
+        cover: blindBox?.cover ?? '',
+      },
+      customOptions,
     };
   }
 

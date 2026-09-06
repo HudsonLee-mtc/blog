@@ -10,7 +10,9 @@
     "pages/profile/profile",
     "pages/address-list/address-list",
     "pages/address-edit/address-edit",
-    "pages/wallet/wallet"
+    "pages/wallet/wallet",
+    "pages/service/service",
+    "pages/custom/custom"
   ],
   "window": {
     "navigationBarTitleText": "花屿叶",
@@ -33,7 +35,7 @@
       },
       {
         "pagePath": "pages/category/category",
-        "text": "选花",
+        "text": "点单",
         "iconPath": "assets/tab-catalog.png",
         "selectedIconPath": "assets/tab-catalog-active.png"
       },

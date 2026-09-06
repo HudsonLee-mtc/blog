@@ -2,6 +2,16 @@
   padding-top: 12rpx;
 }
 
+.fulfillment-tip {
+  margin-bottom: 16rpx;
+  padding: 16rpx 22rpx;
+  border-radius: 18rpx;
+  background: rgba(42, 92, 69, 0.1);
+  color: var(--brand);
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
 .filter-row {
   display: flex;
   margin-bottom: 16rpx;

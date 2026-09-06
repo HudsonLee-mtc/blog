@@ -7,12 +7,20 @@ Page({
     products: [] as Product[],
     categoryId: '',
     scene: '',
+    fulfillmentTip: '',
   },
   onShow() {
     const scene = (wx.getStorageSync('flower_scene_filter') as string) || '';
     if (scene) {
       wx.removeStorageSync('flower_scene_filter');
       this.setData({ scene });
+    }
+    const pref = wx.getStorageSync('fulfillment_pref') as string;
+    if (pref === 'pickup' || pref === 'delivery') {
+      this.setData({
+        fulfillmentTip:
+          pref === 'pickup' ? '当前：到店自取' : '当前：外送到家',
+      });
     }
     this.bootstrap();
   },

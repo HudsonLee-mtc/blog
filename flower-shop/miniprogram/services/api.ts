@@ -65,6 +65,21 @@ export interface HomeData {
   featured: Product[];
   hot: Product[];
   sizeSpecs: ProductSpec[];
+  actions?: Array<{
+    id: string;
+    title: string;
+    subtitle: string;
+    mode: 'pickup' | 'delivery' | 'custom';
+    path: string;
+  }>;
+  promo?: {
+    title: string;
+    subtitle: string;
+    cta: string;
+    productId: string;
+    cover: string;
+  };
+  customOptions?: CustomOption[];
 }
 
 export interface CartData {

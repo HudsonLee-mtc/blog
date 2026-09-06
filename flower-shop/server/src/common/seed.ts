@@ -72,7 +72,7 @@ export const customOptions: CustomOption[] = [
 
 export const shopInfo: ShopInfo = {
   name: '花屿叶',
-  slogan: '一屿花开，一叶知心',
+  slogan: '把浪漫送进日常',
   notice: '同城当日达 · 支持贺卡留言 · 外送/到店取',
   address:
     '内蒙古自治区阿拉善盟阿拉善左旗巴彦浩特镇民主路东城国际17-1芳颜美阁',
@@ -218,6 +218,26 @@ export const products: Product[] = [
     careTips: '甜点请冷藏，花束单独养护。',
     tags: ['组合'],
     sales: 510,
+    featured: true,
+  }),
+  withGlobalSpecs({
+    id: 'p-blindbox',
+    name: '鲜花盲盒',
+    subtitle: '店长当日精选，拆开才知道的小确幸',
+    cover:
+      'https://images.unsplash.com/photo-1487530811176-3780da1762ab?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1487530811176-3780da1762ab?w=1200&q=80',
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80',
+    ],
+    originalPrice: 128,
+    categoryId: 'cat-gift',
+    scenes: ['daily', 'birthday', 'romance'],
+    materials: ['当日精选花材', '惊喜小卡'],
+    meaning: '把选择交给花艺师，把惊喜留给你。',
+    careTips: '收到后尽快拆开换水养护。',
+    tags: ['店长推荐', '盲盒'],
+    sales: 980,
     featured: true,
   }),
 ];

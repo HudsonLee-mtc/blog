@@ -1,0 +1,30 @@
+<view class="page service-page">
+  <view class="hero-card">
+    <view class="mode-tag">{{modeLabel}}</view>
+    <view class="title">{{title}}</view>
+    <view class="desc">{{desc}}</view>
+  </view>
+
+  <view class="panel" wx:if="{{mode === 'pickup'}}">
+    <view class="panel-title">门店信息</view>
+    <view class="shop-name">{{shop.mapName || shop.name}}</view>
+    <view class="muted">{{shop.address}}</view>
+    <view class="muted">{{shop.businessHours}}</view>
+    <view class="muted">电话 {{shop.phone}}</view>
+    <view class="btn-row">
+      <button class="btn-ghost" bindtap="openMap">打开导航</button>
+      <button class="btn-ghost" bindtap="callShop">拨打电话</button>
+    </view>
+  </view>
+
+  <view class="panel" wx:else>
+    <view class="panel-title">配送说明</view>
+    <view class="muted">巴彦浩特同城配送，下单时可选择收货地址与时段。</view>
+    <view class="muted" style="margin-top: 12rpx;">配送费以结算页为准。</view>
+    <view class="btn-row">
+      <button class="btn-ghost" bindtap="goAddresses">管理收货地址</button>
+    </view>
+  </view>
+
+  <button class="btn-primary main-cta" bindtap="goOrder">去选花</button>
+</view>

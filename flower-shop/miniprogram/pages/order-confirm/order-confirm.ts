@@ -44,15 +44,20 @@ Page({
     submitting: false,
   },
   onShow() {
+    const pref = wx.getStorageSync('fulfillment_pref') as string;
+    if (pref === 'pickup' || pref === 'delivery') {
+      this.setData({ fulfillmentType: pref });
+    }
     this.bootstrap();
   },
   async bootstrap() {
     try {
+      const fulfillmentType = this.data.fulfillmentType;
       const [meta, addresses, wallet, cart] = await Promise.all([
         api.meta(),
         api.addresses(),
         api.wallet(),
-        api.cart(this.data.fulfillmentType),
+        api.cart(fulfillmentType),
       ]);
       if (!cart.items.length) {
         wx.showToast({ title: '购物车为空', icon: 'none' });
@@ -81,6 +86,7 @@ Page({
     const fulfillmentType = e.currentTarget.dataset.type as
       | 'delivery'
       | 'pickup';
+    wx.setStorageSync('fulfillment_pref', fulfillmentType);
     const cart = await api.cart(fulfillmentType);
     this.setData({ fulfillmentType, cart });
   },

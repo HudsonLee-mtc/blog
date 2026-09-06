@@ -1,4 +1,5 @@
 <view class="page category-page">
+  <view class="fulfillment-tip" wx:if="{{fulfillmentTip}}">{{fulfillmentTip}}</view>
   <scroll-view scroll-x class="filter-row" enable-flex>
     <view
       class="filter {{!scene && !categoryId ? 'on' : ''}}"
