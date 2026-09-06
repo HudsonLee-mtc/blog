@@ -1,0 +1,24 @@
+<view class="page wallet-page">
+  <view class="balance-card">
+    <view class="label">当前余额</view>
+    <view class="balance"><text class="yen">¥</text>{{balance}}</view>
+    <view class="muted tip">测试环境模拟充值，到账后可用于订单余额支付</view>
+  </view>
+
+  <view class="section-title">选择充值套餐</view>
+  <view class="pack-grid">
+    <view
+      class="pack {{selectedId === item.id ? 'on' : ''}}"
+      wx:for="{{packages}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="pick"
+    >
+      <view class="pack-label">{{item.label}}</view>
+      <view class="pack-bonus" wx:if="{{item.bonus}}">送 ¥{{item.bonus}}</view>
+      <view class="pack-amount">到账 ¥{{item.amount + item.bonus}}</view>
+    </view>
+  </view>
+
+  <button class="btn-primary" bindtap="recharge" loading="{{loading}}">立即充值</button>
+</view>

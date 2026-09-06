@@ -1,0 +1,35 @@
+<view class="page custom-page">
+  <view class="intro">
+    <view class="title">鲜花定制</view>
+    <view class="desc">先选心仪花束，再叠加包装、小熊、巧克力或花瓶等定制项。</view>
+  </view>
+
+  <view class="panel">
+    <view class="panel-title">可加购定制项</view>
+    <view class="option" wx:for="{{options}}" wx:key="id">
+      <view class="option-main">
+        <view class="option-name">{{item.name}}</view>
+        <view class="option-desc">{{item.desc}}</view>
+      </view>
+      <view class="option-price">+¥{{item.price}}</view>
+    </view>
+  </view>
+
+  <view class="section-title">选择花束开始定制</view>
+  <view class="card-grid">
+    <view
+      class="product-card"
+      wx:for="{{products}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goProduct"
+    >
+      <image class="cover" src="{{item.cover}}" mode="aspectFill" />
+      <view class="body">
+        <view class="name">{{item.name}}</view>
+        <view class="sub">{{item.subtitle}}</view>
+        <view class="price"><text class="yen">¥</text>{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>

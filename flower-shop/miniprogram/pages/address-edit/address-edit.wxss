@@ -1,0 +1,36 @@
+.panel {
+  padding: 24rpx;
+  background: var(--surface);
+  border-radius: 24rpx;
+  box-shadow: var(--shadow);
+}
+
+.field {
+  height: 80rpx;
+  padding: 0 20rpx;
+  margin-bottom: 14rpx;
+  background: #eef5f1;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 160rpx;
+  padding: 18rpx 20rpx;
+  margin-bottom: 14rpx;
+  background: #eef5f1;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+}
+
+.switch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12rpx 4rpx;
+}
+
+.btn-primary {
+  margin-top: 32rpx;
+}

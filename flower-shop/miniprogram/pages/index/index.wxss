@@ -1,0 +1,27 @@
+.home-page {
+  min-height: 100vh;
+  padding: 0;
+  background: #f4efe6;
+}
+
+.poster-clip {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f4efe6;
+}
+
+.poster-inner {
+  position: relative;
+  width: 100%;
+}
+
+.poster {
+  display: block;
+  width: 100%;
+}
+
+.hotspot {
+  position: absolute;
+  z-index: 2;
+}

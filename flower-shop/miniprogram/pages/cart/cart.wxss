@@ -1,0 +1,88 @@
+.cart-item {
+  display: flex;
+  gap: 20rpx;
+  padding: 22rpx;
+  margin-bottom: 18rpx;
+  background: var(--surface);
+  border-radius: 24rpx;
+  box-shadow: var(--shadow);
+}
+
+.cart-item .cover {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 18rpx;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.info .name {
+  font-weight: 650;
+  font-size: 28rpx;
+}
+
+.info .spec {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+}
+
+.row {
+  margin-top: 18rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qty-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.qty-btn {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background: #f1ebe3;
+  text-align: center;
+  line-height: 44rpx;
+}
+
+.summary {
+  margin-top: 12rpx;
+  padding: 24rpx;
+  background: var(--surface);
+  border-radius: 24rpx;
+}
+
+.summary .line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12rpx;
+  color: var(--muted);
+}
+
+.summary .total {
+  margin-top: 8rpx;
+  margin-bottom: 0;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 30rpx;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.checkout {
+  margin-top: 28rpx;
+}
+
+.empty .btn-ghost {
+  margin-top: 28rpx;
+  display: inline-block;
+}

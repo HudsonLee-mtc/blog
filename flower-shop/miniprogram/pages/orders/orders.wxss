@@ -1,0 +1,52 @@
+.order-card {
+  margin-bottom: 20rpx;
+  padding: 24rpx;
+  background: var(--surface);
+  border-radius: 24rpx;
+  box-shadow: var(--shadow);
+}
+
+.head,
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head {
+  margin-bottom: 16rpx;
+  font-weight: 650;
+}
+
+.status {
+  color: var(--brand);
+  font-size: 24rpx;
+}
+
+.goods {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 14rpx;
+}
+
+.goods image {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 12rpx;
+}
+
+.g-meta {
+  flex: 1;
+}
+
+.foot {
+  margin-top: 8rpx;
+  padding-top: 12rpx;
+  border-top: 1rpx solid rgba(28, 25, 22, 0.06);
+}
+
+.total {
+  font-weight: 700;
+  color: var(--accent);
+}

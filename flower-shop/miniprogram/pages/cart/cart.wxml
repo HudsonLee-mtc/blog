@@ -1,0 +1,42 @@
+<view class="page cart-page">
+  <block wx:if="{{cart.items.length}}">
+    <view class="cart-item" wx:for="{{cart.items}}" wx:key="lineKey" wx:for-index="idx">
+      <image class="cover" src="{{item.cover}}" mode="aspectFill" />
+      <view class="info">
+        <view class="name">{{item.productName}}</view>
+        <view class="spec muted">{{item.specName}} · {{item.stemHint}}</view>
+        <view class="spec muted" wx:if="{{item.optionNames.length}}">定制：{{item.optionNames}}</view>
+        <view class="row">
+          <view class="price"><text class="yen">¥</text>{{item.price}}</view>
+          <view class="qty-row">
+            <view
+              class="qty-btn"
+              data-index="{{idx}}"
+              data-delta="-1"
+              bindtap="changeQty"
+            >−</view>
+            <text class="qty">{{item.quantity}}</text>
+            <view
+              class="qty-btn"
+              data-index="{{idx}}"
+              data-delta="1"
+              bindtap="changeQty"
+            >+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="summary">
+      <view class="line"><text>商品金额</text><text>¥{{cart.goodsAmount}}</text></view>
+      <view class="line"><text>配送费（结算时可选到店免运费）</text><text>¥{{cart.deliveryFee}}</text></view>
+      <view class="line total"><text>合计</text><text class="accent">¥{{cart.totalAmount}}</text></view>
+    </view>
+
+    <button class="btn-primary checkout" bindtap="checkout">去结算</button>
+  </block>
+  <view class="empty" wx:else>
+    <view>购物车还是空的</view>
+    <button class="btn-ghost" bindtap="goShop">去选花</button>
+  </view>
+</view>

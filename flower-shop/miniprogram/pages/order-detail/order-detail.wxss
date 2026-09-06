@@ -1,0 +1,68 @@
+.status-panel .status {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 8rpx;
+}
+
+.panel {
+  margin-bottom: 20rpx;
+  padding: 24rpx;
+  background: var(--surface);
+  border-radius: 24rpx;
+  box-shadow: var(--shadow);
+}
+
+.panel-title {
+  font-weight: 700;
+  margin-bottom: 14rpx;
+}
+
+.goods {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 14rpx;
+}
+
+.goods image {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 12rpx;
+}
+
+.g-meta {
+  flex: 1;
+}
+
+.sum {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12rpx;
+  font-weight: 700;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.btn-primary {
+  margin-top: 12rpx;
+}
+
+.pay-panel .link {
+  margin-top: 10rpx;
+  color: var(--brand);
+  font-size: 24rpx;
+}
+
+.mock-pay {
+  margin-top: 16rpx;
+  width: 100%;
+}
+
+.sum.muted {
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 8rpx;
+}

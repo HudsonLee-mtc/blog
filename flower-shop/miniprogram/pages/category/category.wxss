@@ -1,0 +1,42 @@
+.category-page {
+  padding-top: 12rpx;
+}
+
+.fulfillment-tip {
+  margin-bottom: 16rpx;
+  padding: 16rpx 22rpx;
+  border-radius: 18rpx;
+  background: rgba(42, 92, 69, 0.1);
+  color: var(--brand);
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.filter-row {
+  display: flex;
+  margin-bottom: 16rpx;
+  white-space: nowrap;
+}
+
+.filter-row.scenes {
+  margin-bottom: 28rpx;
+}
+
+.filter {
+  display: inline-flex;
+  margin-right: 14rpx;
+  padding: 14rpx 26rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 252, 248, 0.9);
+  color: var(--muted);
+  font-size: 24rpx;
+}
+
+.filter.soft {
+  background: rgba(31, 77, 58, 0.06);
+}
+
+.filter.on {
+  background: var(--brand);
+  color: #fff;
+}

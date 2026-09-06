@@ -1,0 +1,12 @@
+<view class="page edit-page">
+  <view class="panel">
+    <input class="field" placeholder="收花人姓名" value="{{name}}" bindinput="onName" />
+    <input class="field" placeholder="手机号" type="number" maxlength="11" value="{{phone}}" bindinput="onPhone" />
+    <textarea class="textarea" placeholder="详细地址（小区/门牌等）" value="{{detail}}" bindinput="onDetail" maxlength="120" />
+    <view class="switch-row">
+      <text>设为默认地址</text>
+      <switch checked="{{isDefault}}" color="#2A5C45" bindchange="onDefault" />
+    </view>
+  </view>
+  <button class="btn-primary" bindtap="save" loading="{{saving}}">保存</button>
+</view>

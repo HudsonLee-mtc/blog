@@ -1,0 +1,32 @@
+<view class="page address-page">
+  <block wx:if="{{addresses.length}}">
+    <view
+      class="addr-card"
+      wx:for="{{addresses}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="pick"
+    >
+      <view class="addr-top">
+        <text class="name">{{item.name}}</text>
+        <text class="phone">{{item.phone}}</text>
+        <text class="badge" wx:if="{{item.isDefault}}">默认</text>
+      </view>
+      <view class="detail muted">{{item.detail}}</view>
+      <view class="actions" catchtap="stop">
+        <view
+          class="action"
+          wx:if="{{!item.isDefault}}"
+          data-id="{{item.id}}"
+          bindtap="setDefault"
+        >设为默认</view>
+        <view class="action" data-id="{{item.id}}" bindtap="goEdit">编辑</view>
+        <view class="action danger" data-id="{{item.id}}" bindtap="remove">删除</view>
+      </view>
+    </view>
+  </block>
+  <view class="empty" wx:else>还没有收货地址</view>
+
+  <button class="btn-primary add-btn" bindtap="goEdit">新增地址</button>
+  <view class="hint muted" wx:if="{{fromConfirm}}">点选地址后返回确认订单</view>
+</view>
