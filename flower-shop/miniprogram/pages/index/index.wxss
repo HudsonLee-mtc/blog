@@ -1,219 +1,55 @@
 .home-page {
   min-height: 100vh;
-  padding: 0 0 48rpx;
-  background: #e7f0ea;
+  padding: 0;
+  background: #e8f0ea;
 }
 
-.hero-wrap {
+.poster-wrap {
   position: relative;
-  height: 720rpx;
-  overflow: hidden;
-  background: #d7e5db;
-}
-
-.hero-img {
   width: 100%;
-  height: 100%;
+  overflow: hidden;
+  /* 裁掉设计稿底部假 tab，避免和真 tabBar 叠两层 */
+  padding-bottom: 0;
+}
+
+.poster {
   display: block;
+  width: 100%;
+  /* 略微上提裁切底部导航条区域 */
+  margin-bottom: -12%;
 }
 
-.hero-fade {
+.hotspot {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 160rpx;
-  background: linear-gradient(transparent, #e7f0ea);
-  pointer-events: none;
-}
-
-.hero-brand {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 48rpx;
   z-index: 2;
-  text-align: center;
-  text-shadow: 0 6rpx 18rpx rgba(255, 255, 255, 0.7);
 }
 
-.brand-en {
-  font-size: 22rpx;
-  letter-spacing: 6rpx;
-  color: rgba(42, 92, 69, 0.78);
+/* 三个入口大致落在画面中下部 */
+.hotspot-pickup {
+  left: 4%;
+  top: 58%;
+  width: 30%;
+  height: 14%;
 }
 
-.brand-cn {
-  margin-top: 8rpx;
-  font-size: 56rpx;
-  font-weight: 700;
-  letter-spacing: 10rpx;
-  color: #1a2a22;
+.hotspot-custom {
+  left: 35%;
+  top: 58%;
+  width: 30%;
+  height: 14%;
 }
 
-.brand-slogan {
-  margin-top: 8rpx;
-  font-size: 24rpx;
-  color: #3d5248;
+.hotspot-delivery {
+  left: 66%;
+  top: 58%;
+  width: 30%;
+  height: 14%;
 }
 
-.sheet {
-  position: relative;
-  z-index: 1;
-  margin-top: -80rpx;
-  padding: 0 28rpx;
-}
-
-.action-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16rpx;
-}
-
-.action-card {
-  padding: 28rpx 10rpx 24rpx;
-  border-radius: 40rpx 40rpx 28rpx 28rpx;
-  background: rgba(255, 252, 248, 0.96);
-  box-shadow: 0 16rpx 40rpx rgba(42, 92, 69, 0.1);
-  text-align: center;
-}
-
-.action-icon {
-  width: 92rpx;
-  height: 92rpx;
-  margin: 0 auto 14rpx;
-  border-radius: 50%;
-}
-
-.action-icon-pickup {
-  background:
-    radial-gradient(circle at 35% 30%, #f3d6dc, transparent 52%),
-    linear-gradient(145deg, #eef7f2, #d7ebe0);
-}
-
-.action-icon-custom {
-  background:
-    radial-gradient(circle at 60% 40%, #d9ebe3, transparent 55%),
-    linear-gradient(145deg, #f7e9ec, #eaf3ee);
-}
-
-.action-icon-delivery {
-  background:
-    radial-gradient(circle at 40% 30%, #cfe3d8, transparent 50%),
-    linear-gradient(145deg, #f3d6dc, #eaf3ee);
-}
-
-.action-title {
-  font-size: 26rpx;
-  font-weight: 700;
-  color: #1a2a22;
-}
-
-.action-sub {
-  margin-top: 6rpx;
-  font-size: 18rpx;
-  letter-spacing: 1rpx;
-  color: #7a8a82;
-}
-
-.promo-card {
-  margin-top: 24rpx;
-  padding: 28rpx;
-  min-height: 180rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20rpx;
-  border-radius: 28rpx;
-  background: linear-gradient(120deg, #d7ebe0, #f7fbf8);
-  box-shadow: 0 16rpx 40rpx rgba(42, 92, 69, 0.1);
-}
-
-.promo-copy {
-  flex: 1;
-  min-width: 0;
-}
-
-.promo-title {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #1a2a22;
-}
-
-.promo-sub {
-  margin-top: 8rpx;
-  font-size: 22rpx;
-  color: #5f6f66;
-  line-height: 1.5;
-}
-
-.promo-cta {
-  display: inline-flex;
-  margin-top: 18rpx;
-  padding: 12rpx 28rpx;
-  border-radius: 999rpx;
-  background: #2a5c45;
-  color: #fff;
-  font-size: 24rpx;
-  font-weight: 600;
-}
-
-.promo-cover {
-  width: 160rpx;
-  height: 160rpx;
-  border-radius: 24rpx;
-  flex-shrink: 0;
-}
-
-.section-title {
-  margin: 36rpx 0 20rpx;
-  font-size: 34rpx;
-  font-weight: 650;
-  color: #1a2a22;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20rpx;
-}
-
-.product-card {
-  background: rgba(247, 251, 248, 0.95);
-  border-radius: 24rpx;
-  overflow: hidden;
-  box-shadow: 0 16rpx 40rpx rgba(42, 92, 69, 0.08);
-}
-
-.product-card .cover {
-  width: 100%;
-  height: 260rpx;
-  display: block;
-}
-
-.product-card .body {
-  padding: 18rpx;
-}
-
-.product-card .name {
-  font-size: 28rpx;
-  font-weight: 600;
-}
-
-.product-card .sub {
-  margin-top: 6rpx;
-  color: #5f6f66;
-  font-size: 22rpx;
-}
-
-.product-card .price {
-  margin-top: 10rpx;
-  color: #b85c6a;
-  font-weight: 700;
-  font-size: 30rpx;
-}
-
-.product-card .yen {
-  font-size: 22rpx;
-  margin-right: 2rpx;
+/* 店长推荐 / 盲盒横幅 */
+.hotspot-promo {
+  left: 5%;
+  top: 73%;
+  width: 90%;
+  height: 12%;
 }

@@ -1,55 +1,26 @@
 <view class="home-page">
-  <view class="hero-wrap">
-    <image class="hero-img" src="/assets/home-hero.png" mode="aspectFill" />
-    <view class="hero-fade"></view>
-    <view class="hero-brand">
-      <view class="brand-en">FLORA & GIFT</view>
-      <view class="brand-cn">{{shop.name}}</view>
-      <view class="brand-slogan">{{shop.slogan || '把浪漫送进日常'}}</view>
-    </view>
-  </view>
+  <view class="poster-wrap">
+    <image class="poster" src="/assets/home-hero.png" mode="widthFix" />
 
-  <view class="sheet">
-    <view class="action-row">
-      <view
-        class="action-card"
-        wx:for="{{actions}}"
-        wx:key="id"
-        data-mode="{{item.mode}}"
-        data-path="{{item.path}}"
-        bindtap="onAction"
-      >
-        <view class="action-icon action-icon-{{item.id}}"></view>
-        <view class="action-title">{{item.title}}</view>
-        <view class="action-sub">{{item.subtitle}}</view>
-      </view>
-    </view>
-
-    <view class="promo-card" bindtap="goPromo">
-      <view class="promo-copy">
-        <view class="promo-title">{{promo.title}}</view>
-        <view class="promo-sub">{{promo.subtitle}}</view>
-        <view class="promo-cta">{{promo.cta}} ›</view>
-      </view>
-      <image wx:if="{{promo.cover}}" class="promo-cover" src="{{promo.cover}}" mode="aspectFill" />
-    </view>
-
-    <view class="section-title">热销花束</view>
-    <view class="card-grid">
-      <view
-        class="product-card"
-        wx:for="{{hot}}"
-        wx:key="id"
-        data-id="{{item.id}}"
-        bindtap="goProduct"
-      >
-        <image class="cover" src="{{item.cover}}" mode="aspectFill" />
-        <view class="body">
-          <view class="name">{{item.name}}</view>
-          <view class="sub">已售 {{item.sales}}</view>
-          <view class="price"><text class="yen">¥</text>{{item.price}}</view>
-        </view>
-      </view>
-    </view>
+    <!-- 透明热区：对应图上三个入口 + 盲盒推荐 -->
+    <view
+      class="hotspot hotspot-pickup"
+      data-mode="pickup"
+      data-path="/pages/service/service?mode=pickup"
+      bindtap="onAction"
+    ></view>
+    <view
+      class="hotspot hotspot-custom"
+      data-mode="custom"
+      data-path="/pages/custom/custom"
+      bindtap="onAction"
+    ></view>
+    <view
+      class="hotspot hotspot-delivery"
+      data-mode="delivery"
+      data-path="/pages/service/service?mode=delivery"
+      bindtap="onAction"
+    ></view>
+    <view class="hotspot hotspot-promo" bindtap="goPromo"></view>
   </view>
 </view>
